@@ -7,11 +7,10 @@ using namespace std;
 int f();
 
 template <typename T>
-class Element
+struct Element
 {
-    public:
-        T data;
-        Element<T>* next;
+    T data;
+    Element<T>* next;
 };
 
 template <typename T> ostream& operator<<(ostream& out, const T& el);
