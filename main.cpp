@@ -14,17 +14,6 @@ T add(T a,  T b)
 
 int main()
 {
-    /*Complex num1(5, 6);
-    Complex num2(10, 3);
-    cout << num2;
-    num2 = num1 + num2;
-    cout << num2;
-
-    cout << add(2, 3) << endl;
-    cout << add(num1, num2);
-    num2 = add(num1, num2);
-    cout << num2;*/
-
     /*LinkedList <int> lista;
     lista.addElement(6);
     lista.addElement(65);
@@ -37,11 +26,21 @@ int main()
 
     Complex num1(5, 6);
     Complex num2(10, 3);
+    Complex num3(115, 226);
+    Complex num4(110, 333);
 
     LinkedList <Complex> zespolone;
     zespolone.addElement(num1);
     zespolone.addElement(num2);
     zespolone.print();
+
+    LinkedList <Complex> zespolone2;
+    zespolone2.addElement(num3);
+    zespolone2.addElement(num4);
+    zespolone2.print();
+
+    LinkedList <Complex> zespolone3(zespolone);
+    zespolone3.print();
 
     return 0;
 }

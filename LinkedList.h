@@ -4,16 +4,12 @@
 #include <iostream>
 using namespace std;
 
-int f();
-
 template <typename T>
 struct Element
 {
     T data;
     Element<T>* next;
 };
-
-template <typename T> ostream& operator<<(ostream& out, const T& el);
 
 template <typename T>
 class LinkedList
@@ -22,7 +18,7 @@ class LinkedList
         Element<T>* head;
     public:
         LinkedList();
-        LinkedList(const LinkedList<T> copied);
+        LinkedList(const LinkedList<T>& copied);
         ~LinkedList();
         void addElement(const T& element);
         void print() const;
@@ -36,15 +32,25 @@ LinkedList<T>::LinkedList() : head(NULL)
 }
 
 template <typename T> 
-LinkedList<T>::LinkedList(const LinkedList<T> copied)
+LinkedList<T>::LinkedList(const LinkedList<T>& copied)
 {
-    //TODO: implement
+    Element<T>* node = copied.head;
+    while(node)
+    {
+        addElement(node->data);
+        node = node->next;
+    }
 }
 
 template <typename T> 
 LinkedList<T>::~LinkedList()
 {
-   //TODO: implement
+   while(head)
+   {
+       Element<T>* temp = head;
+       head = head->next;
+       delete temp;
+   }
 }
 
 template <typename T> 
@@ -66,5 +72,17 @@ void LinkedList<T>::print() const
         temp = temp->next;
     }
 }
+
+/*template <typename T>
+ostream& operator<<(ostream& out, const LinkedList<T>& list)
+{
+    Element<T>* temp = list.head;
+    while(temp)
+    {
+        out << temp << endl;
+        temp = temp->next;
+    }
+    return out;
+}*/
 
 #endif
