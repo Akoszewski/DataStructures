@@ -32,7 +32,7 @@ LinkedList<T>::LinkedList() : head(NULL)
 }
 
 template <typename T> 
-LinkedList<T>::LinkedList(const LinkedList<T>& copied)
+LinkedList<T>::LinkedList(const LinkedList<T>& copied) : head(NULL)
 {
     Element<T>* node = copied.head;
     while(node)

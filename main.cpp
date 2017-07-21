@@ -42,5 +42,7 @@ int main()
     LinkedList <Complex> zespolone3(zespolone);
     zespolone3.print();
 
+    getch();
+
     return 0;
 }
